@@ -107,10 +107,9 @@ Always check a website’s robots.txt and terms of service before scraping.
 ## 🧑‍💻 Author
 
 Aryan Prajapati
-Aspiring Python Developer & Web Scraper
-Focused on automation, data extraction, and scaling freelance scraping projects.
+Python Developer • Web Scraper • Automation Engineer
 
-GitHub: your-username
+GitHub: AryanPrajapati9456
 
 ## 🏁 Project Status
 
