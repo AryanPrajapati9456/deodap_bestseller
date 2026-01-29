@@ -39,10 +39,14 @@ def safe_attr(parent, tag, class_name, attr):
 
 base_url = "https://deodap.in/collections/best-selling-products"
 
-def products():
+def products(progress_callback=None):
     all_products = []
-    for page in range(1, 10):
+    total_pages = 9
+    for page in range(1, total_pages + 1):
         try:
+            if progress_callback:
+                progress_callback(page, total_pages)
+
             if page in [1, 2]:
                 main_url = "https://deodap.in/collections/best-selling-products"
             else:

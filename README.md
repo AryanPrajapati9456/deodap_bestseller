@@ -1,117 +1,114 @@
-# 🛒 Deodap Bestseller Products Scraper
+# 🛒 Deodap Bestseller Analytics & Scraper
 
-A Python-based web scraping project that extracts product data from the **Deodap Best-Selling Products** page using **BeautifulSoup** and **Requests**.
+![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas)
+![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
 
-This script collects product details such as:
-- 📝 Description  
-- 💰 Price  
-- ⭐ Star rating  
-- 💬 Reviews  
-- 🔗 Product URL  
+A professional web scraping and analytics tool designed to extract, visualize, and export data from the **Deodap Best-Selling Products** catalog. 
 
-and saves them in **CSV**, **JSON**, and **Excel** formats.
+This project features both a **Production-Ready Python Script** for automation and a **Modern Interactive Web Interface** (built with Streamlit) for ease of use.
 
 ---
 
-## 🚀 Features
+## � Project Demo
 
-✅ Scrapes multiple pages automatically  
-✅ Handles missing data safely with custom `safe_text` and `safe_attr` functions  
-✅ Adds `logging` for clean progress tracking and error reporting  
-✅ Saves results in multiple formats (CSV, JSON, Excel)  
-✅ Modular and reusable — easy to adapt for other websites
+
+
+![Project Demo Placeholder](https://via.placeholder.com/800x400?text=Project+Demo+Video+Coming+Soon)
 
 ---
 
-## ⚙️ Technologies Used
+## �🌟 Key Features
 
-- **Python 3.x**  
-- **BeautifulSoup4**  
-- **Requests**  
-- **Pandas**  
-- **LXML**  
-- **CSV / JSON / Excel**  
-- **Logging**
+### 🖥️ Interactive Web Dashboard
+- **One-Click Scraping**: Trigger the entire process with a single button.
+- **Real-Time Feedback**: View live progress bars and streaming logs as the scraper works.
+- **Data Preview**: Sort and filter scraped products instantly in a responsive table.
+- **Instant Export**: Download data in **CSV**, **JSON**, or **Excel** formats directly from the browser.
+
+### ⚙️ Core Scraping Logic
+- **Robust Extraction**: Custom `safe_text` and `safe_attr` handlers prevent crashes from missing data.
+- **Auto-Pagination**: Automatically navigates through all bestseller pages (1-9).
+- **Polished Logging**: Detailed file-based logging (`scraper.log`) for debugging and auditing.
+- **Rate Limiting**: Built-in delays to respect server load and mimic human behavior.
+
+---
+
+## 📥 Output Data
+
+The tool extracts the following fields for every product:
+- 📝 **Product Description**
+- 💰 **Price** (Current Sale Price)
+- ⭐ **Star Rating**
+- 💬 **Review Count**
+- 🔗 **Product URL**
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Python 3.8 or higher
+
+### Installation
+
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/AryanPrajapati9456/deodap_bestseller.git
+    cd deodap_bestseller
+    ```
+
+2.  **Install Dependencies**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+### Usage
+
+#### Option A: Interactive Dashboard (Recommended)
+Launch the visual interface in your browser:
+```bash
+streamlit run app.py
+```
+
+#### Option B: Headless CLI Scraper
+Run the automation script directly in your terminal:
+```bash
+python scraper.py
+```
 
 ---
 
 ## 📁 Project Structure
 
-Deodap_Scraper/
-│
-├── scraper.py # Main scraper script
-├── scraper.log # Logs all scraping activity
-├── Deodap_bestseller2025-11-08.csv
-├── Deodap_bestseller2025-11-08.json
-├── deodap_bestseller.xlsx
-└── README.md
+```text
+├── app.py             # 🎨 Streamlit Web Application Entry Point
+├── scraper.py         # 🧠 Core Scraping Logic & Data Extraction
+├── scraper.log        # 📝 Runtime Logs
+├── requirements.txt   # 📦 Project Dependencies
+├── README.md          # 📄 Documentation
+└── [Output Files]     # 📊 Generated CSV/JSON/Excel reports
+```
 
 ---
 
-## 🔧 How to Run
+## ⚠️ Ethical Considerations
 
-1. **Clone the repository:**
-   
-   ```bash
-   git clone https://github.com/your-username/deodap-scraper.git
-   cd deodap-scraper
+This tool is designed for **educational purposes** and **personal portfolio demonstration**. 
+- It respects the target site by implementing delays between requests.
+- Users are responsible for adhering to `deodap.in`'s Terms of Service and `robots.txt` policy.
 
-## Install dependencies:
+---
 
-pip install requests beautifulsoup4 pandas lxml
+## 👤 Author
 
-## Run the scraper:
+**Aryan Prajapati**
+*Python Developer • Web Scraper • Automation Engineer*
 
-scraper.py
+[![GitHub](https://img.shields.io/badge/GitHub-AryanPrajapati9456-181717?style=flat&logo=github)](https://github.com/AryanPrajapati9456)
 
-## Check your output files:
+---
 
-Deodap_bestsellerYYYY-MM-DD.csv
-
-Deodap_bestsellerYYYY-MM-DD.json
-
-deodap_bestseller.xlsx
-
-## 🧠 How It Works
-
-The script loops through multiple pages (page=1–9) of Deodap’s best-selling products.
-
-For each page:
-
-It fetches HTML using requests.
-
-Parses the content using BeautifulSoup.
-
-Extracts product fields using safe_text() and safe_attr() (to prevent crashes if tags are missing).
-
-Adds delay (time.sleep(1)) to avoid overloading the server.
-
-Finally, saves all collected data into 3 formats.
-
-## 🧰 Logging System
-
-All scraping activity and errors are recorded in scraper.log.
-
-Example log output:
-
-2025-11-08 15:32:10 - INFO - Scraping page 3 ...
-2025-11-08 15:32:11 - INFO - Page 3 done. Waiting before next page...
-2025-11-08 15:32:12 - ERROR - safe_attr error: 'NoneType' object has no attribute 'get'
-2025-11-08 15:32:15 - INFO - ✅ CSV file saved as Deodap_bestseller2025-11-08.csv
-
-## ⚠️ Ethical Note
-
-This project is for learning and portfolio purposes only.
-Always check a website’s robots.txt and terms of service before scraping.
-
-## 🧑‍💻 Author
-
-Aryan Prajapati
-Python Developer • Web Scraper • Automation Engineer
-
-GitHub: AryanPrajapati9456
-
-## 🏁 Project Status
-
-* ✅ Fully functional static scraper for Deodap’s bestseller section.  
-* Ready for production or integration into larger automation workflows.
+### 📝 License
+This project is open-source and available for usage under the MIT License.
