@@ -15,7 +15,9 @@ This project features both a **Production-Ready Python Script** for automation a
 
 
 
-![Project Demo Placeholder](https://via.placeholder.com/800x400?text=Project+Demo+Video+Coming+Soon)
+
+https://github.com/user-attachments/assets/51a89ce5-c619-4530-87b6-6891fe37159e
+
 
 ---
 
